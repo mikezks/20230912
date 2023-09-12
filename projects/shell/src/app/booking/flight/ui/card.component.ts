@@ -1,8 +1,15 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Flight } from '../logic/model/flight';
+import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
+  standalone: true,
   selector: 'app-flight-card',
+  imports: [
+    CommonModule,
+    RouterLink
+  ],
   template: `
     <div
       class="card"

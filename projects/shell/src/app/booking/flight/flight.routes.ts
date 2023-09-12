@@ -1,9 +1,8 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { EditComponent } from './features/edit/edit.component';
 import { SearchComponent } from './features/search/search.component';
 
-const routes: Routes = [
+const flightBookingRoutes: Routes = [
   {
     path: '',
     children: [
@@ -24,8 +23,4 @@ const routes: Routes = [
   }
 ];
 
-@NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
-})
-export class FlightRoutingModule { }
+export default flightBookingRoutes;
