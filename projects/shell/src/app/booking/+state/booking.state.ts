@@ -142,7 +142,8 @@ export function injectBookingFeature() {
   const store = inject(Store);
 
   return {
-    flights$: store.select(bookingFeature.selectFlights),
+    flights: store.selectSignal(bookingFeature.selectFlights),
+    flights$: store.select(bookingFeature.selectFlights) as Observable<Flight[]>,
     activeFlight$: store.select(bookingFeature.selectActiveFlight).pipe(
       filter(f => !!f)
     ) as Observable<Flight>,
