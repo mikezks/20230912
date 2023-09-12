@@ -18,7 +18,10 @@ export const FLIGHT_ROUTES: Routes = [
       },
       {
         path: 'edit/:id',
-        component: EditComponent
+        component: EditComponent,
+        data: {
+          age: 51
+        }
       }
     ]
   }

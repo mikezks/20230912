@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, Input, inject, numberAttribute } from '@angular/core';
 import { NonNullableFormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { injectBookingFeature } from '../../../+state/booking.state';
 
@@ -11,6 +11,11 @@ import { injectBookingFeature } from '../../../+state/booking.state';
   templateUrl: './edit.component.html'
 })
 export class EditComponent {
+  @Input({
+    transform: numberAttribute,
+    required: true
+  }) age = -1;
+
   editForm = inject(NonNullableFormBuilder).group({
     id: [0],
     from: [''],
